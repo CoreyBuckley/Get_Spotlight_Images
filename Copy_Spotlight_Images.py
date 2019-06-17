@@ -9,6 +9,12 @@ userpath = os.environ.get("USERPROFILE") #C:/Users/[person]
 
 windowsSpotlightPath = userpath + r"\AppData\Local\Packages\Microsoft.Windows.ContentDeliveryManager_cw5n1h2txyewy\LocalState\Assets\\"
 destPath = userpath + r"\Desktop\Spotlight_Images\Test\\"
+
+if (not os.path.isdir(userpath + r"\Desktop\Spotlight_Images")):
+	os.mkdir(userpath + r"\Desktop\Spotlight_Images")
+	os.mkdir(userpath + r"\Desktop\Spotlight_Images\Test")
+	
+
 os.chdir(destPath)
 spotlightImages = []
 biggerThan = 1024*200 #bigger than 200KB
